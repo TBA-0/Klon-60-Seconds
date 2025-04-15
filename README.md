@@ -14,3 +14,7 @@ Dowolność wyboru w prowadzeniu swojego państwa - od zmiany nazwy po zmianę u
 Wybory moralne zmuszające do dostosowania swojej taktyki<br>
 Wskaźniki przyjaźni z postaciami i frakcjami<br>
 Duża ilość ścieżek rozgrywki - dyktator, pacyfista, prezydent i wiele innych<br>
+
+### Użyte biblioteki
+Pygame<br>
+(dodac kolejne)
