@@ -1,4 +1,4 @@
-# Projekt-Dynastia (nazwa tymczasowa)
+# Project Dynasty (nazwa tymczasowa)
 
 ### Główny zarys fabuły
 Gra typu resource management inspirowana 60 Seconds i Crusader Kings 3. Jako świeżo wybrana głowa państwa masz wolność wyboru, jak poprowadzisz swój kraj<br>
