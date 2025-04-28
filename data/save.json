@@ -1,6 +1,1 @@
-{
-    "gospodarka": 50,
-    "wojsko": 50,
-    "opinia_publiczna": 50,
-    "run": 1
-}
+{"gospodarka": 75, "wojsko": 45, "opinia_publiczna": -30, "run": 1}

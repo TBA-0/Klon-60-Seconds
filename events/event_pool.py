@@ -1,10 +1,10 @@
-# pula wydarzen
+# events/event_pool.py
 
 event_pool = [
     {
         "text": "Protesty w stolicy! Co robisz?",
         "options": {
-            "Wezwij wojsko": {"opinia_publiczna": -20, "wojsko": -5},
+            "Rozpędź siłą": {"opinia_publiczna": -20, "wojsko": -5},
             "Negocjuj z liderami": {"opinia_publiczna": +10, "gospodarka": -5}
         }
     },
@@ -18,8 +18,8 @@ event_pool = [
     {
         "text": "Obcy dyktator chce współpracy militarnej.",
         "options": {
-            "Zgoda": {"wojsko": +15, "opinia_publiczna": -10},
-            "Odmowa": {"wojsko": -5, "opinia_publiczna": +5}
+            "Zgódź się": {"wojsko": +15, "opinia_publiczna": -10},
+            "Odrzuć": {"wojsko": -5, "opinia_publiczna": +5}
         }
     },
     {
@@ -27,13 +27,6 @@ event_pool = [
         "options": {
             "Świętuj z obywatelami": {"opinia_publiczna": +15},
             "Ignoruj sukces": {"opinia_publiczna": -5}
-        }
-    },
-    {
-        "text": "kolejny event placeholder ",
-        "options": {
-            "opcja1": {"opinia_publiczna": +15},
-            "opcja2": {"opinia_publiczna": -5}
         }
     }
 ]
