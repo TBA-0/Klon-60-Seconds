@@ -5,6 +5,7 @@ Gra typu resource management inspirowana 60 Seconds i Crusader Kings 3. Jako św
 Zawiera elementy strategii i roguelików<br>
 
 ### Planowane ficzery
+Kamera z góry<br>
 Każdy run ma wpływ na następne<br>
 Wybory kształtują przebieg rozgrywki<br>
 Losowe zdarzenia mogące zmienić bieg fabuły<br>
