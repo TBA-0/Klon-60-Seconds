@@ -6,6 +6,7 @@ Zawiera elementy strategii i roguelików<br>
 
 ### Planowane ficzery
 Kamera z góry<br>
+Kilka map<br>
 Każdy run ma wpływ na następne<br>
 Wybory kształtują przebieg rozgrywki<br>
 Losowe zdarzenia mogące zmienić bieg fabuły<br>
