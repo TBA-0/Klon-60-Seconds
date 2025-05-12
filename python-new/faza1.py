@@ -9,7 +9,7 @@ MAP_SIZE = 5
 TILE_SIZE = 64
 SCREEN_SIZE = MAP_SIZE * TILE_SIZE
 INVENTORY_SIZE = 4
-RESOURCES = ["Drewno", "Kamień", "Żelazo", "Złoto"]
+RESOURCES = ["Latarka", "Walizka", "Nóż", "Żarcie"]
 
 # Kolory
 WHITE = (255, 255, 255)
@@ -20,7 +20,7 @@ BLACK = (0, 0, 0)
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE + 100))
-pygame.display.set_caption("Zbieracz zasobów")
+pygame.display.set_caption("Zbierz przedmioty")
 font = pygame.font.SysFont(None, 24)
 
 def create_map():

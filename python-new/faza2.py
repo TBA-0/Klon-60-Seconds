@@ -42,16 +42,38 @@ GREEN = (50, 200, 50)
 
 tabs = ["questy", "polityka", "ulepszenia", "ekwipunek", "frakcje", "ustawienia"]
 active_tab = "questy"
+setting_buttons = {
+    "fullscreen": pygame.Rect(70, 100, 300, 30),
+    "volume": pygame.Rect(70, 140, 300, 30),
+    "backgrounds": []  # lista z przyciskami tła
+}
+
+def draw_button(text, rect, color=GRAY):
+    pygame.draw.rect(screen, color, rect)
+    draw_text(text, rect.x + 10, rect.y + 5)
+
+
 
 def draw_settings_tab():
     draw_text("USTAWIENIA:", 50, 50)
-    draw_text("1 - Pełny ekran: {}".format(user_settings["fullscreen"]), 70, 100)
-    draw_text("2 - Głośność: {:.1f}".format(user_settings["volume"]), 70, 140)
 
-    draw_text("Tła:", 70, 180)
-    backgrounds = [f for f in os.listdir("backgrounds") if f.endswith((".png", ".jpg"))]
-    for i, name in enumerate(backgrounds[:3]):
-        draw_text(f"{i+3} - {name}", 100, 210 + i * 30)
+    # Pełny ekran
+    fs_text = f"Pełny ekran: {'TAK' if user_settings['fullscreen'] else 'NIE'}"
+    draw_button(fs_text, setting_buttons["fullscreen"])
+
+    # Głośność
+    vol_text = f"Głośność: {int(user_settings['volume'] * 100)}%"
+    draw_button(vol_text, setting_buttons["volume"])
+
+    # Lista teł
+    draw_text("Wybierz tło:", 70, 190)
+    setting_buttons["backgrounds"] = []
+    files = [f for f in os.listdir("python-new/backgrounds") if f.endswith((".png", ".jpg"))]
+    for i, name in enumerate(files[:3]):
+        rect = pygame.Rect(100, 220 + i * 40, 300, 30)
+        setting_buttons["backgrounds"].append((rect, name))
+        draw_button(f"Tło: {name}", rect)
+
 
 if active_tab == "ustawienia":
     draw_settings_tab()
@@ -217,12 +239,16 @@ def get_tab_clicked(pos):
     return None
 
 def main():
-    global active_tab, current_moral_choice, waiting_for_next_day
+    global active_tab, current_moral_choice, waiting_for_next_day, background
 
     current_moral_choice = generate_moral_choice()
 
     while True:
         draw_ui()
+
+        # Jeśli aktywna zakładka to "ustawienia", rysujemy przyciski
+        if active_tab == "ustawienia":
+            draw_settings_tab()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -232,9 +258,35 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 clicked_tab = get_tab_clicked(event.pos)
                 if clicked_tab:
-                    active_tab = clicked_tab
-                    if not waiting_for_next_day:
-                        current_moral_choice = generate_moral_choice()
+                    active_tab = clicked_tab  # <-- kluczowa linia!
+                else:
+                    if active_tab == "ustawienia":
+                        mx, my = event.pos
+
+                        # Klik: Pełny ekran
+                        if setting_buttons["fullscreen"].collidepoint(mx, my):
+                            user_settings["fullscreen"] = not user_settings["fullscreen"]
+                            settings.save_settings(user_settings)
+                            pygame.quit()
+                            os.execl(sys.executable, sys.executable, *sys.argv)
+
+                        # Klik: Głośność
+                        elif setting_buttons["volume"].collidepoint(mx, my):
+                            user_settings["volume"] = round((user_settings["volume"] + 0.1) % 1.1, 1)
+                            pygame.mixer.music.set_volume(user_settings["volume"])
+                            settings.save_settings(user_settings)
+
+                        # Klik: wybór tła
+                        for rect, name in setting_buttons["backgrounds"]:
+                            if rect.collidepoint(mx, my):
+                                path = os.path.join("python-new/backgrounds", name)
+                                user_settings["background"] = path
+                                settings.save_settings(user_settings)
+                                try:
+                                    background = pygame.image.load(path)
+                                    background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
+                                except:
+                                    background = None
 
             elif event.type == pygame.KEYDOWN:
                 if active_tab == "ustawienia":
@@ -251,23 +303,22 @@ def main():
 
                     elif event.key in [pygame.K_3, pygame.K_4, pygame.K_5]:
                         index = event.key - pygame.K_3
-                        files = [f for f in os.listdir("backgrounds") if f.endswith((".png", ".jpg"))]
+                        files = [f for f in os.listdir("python-new/backgrounds") if f.endswith((".png", ".jpg"))]
                         if index < len(files):
-                            path = os.path.join("backgrounds", files[index])
+                            path = os.path.join("python-new/backgrounds", files[index])
                             user_settings["background"] = path
                             settings.save_settings(user_settings)
-
                             try:
                                 background = pygame.image.load(path)
                                 background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
                             except:
                                 background = None
 
-                # ✅ Przejście do kolejnego dnia
+                # Nowy dzień
                 if waiting_for_next_day and event.key == pygame.K_RETURN:
                     reset_day()
 
-                # ✅ Moralne wybory
+                # Moralny wybór
                 if not waiting_for_next_day:
                     if current_moral_choice:
                         if event.key == pygame.K_1:
@@ -275,18 +326,17 @@ def main():
                         elif event.key == pygame.K_2:
                             apply_choice(1)
 
-                    # ✅ Dodanie ulepszenia
-                    if event.key == pygame.K_u and active_tab == "ulepszenia":
-                        new_upg = random.choice([u for u in upgrade_options if u not in upgrades])
-                        upgrades.append(new_upg)
+                # Dodanie ulepszenia
+                if event.key == pygame.K_u and active_tab == "ulepszenia":
+                    new_upg = random.choice([u for u in upgrade_options if u not in upgrades])
+                    upgrades.append(new_upg)
 
-        # ✅ Upływ czasu - zakończenie dnia po 5 minutach
+        # Zegar dnia
         if not waiting_for_next_day and time.time() - start_time >= day_timer:
             waiting_for_next_day = True
 
         pygame.display.flip()
         clock.tick(30)
-
 
 if __name__ == "__main__":
     main()
