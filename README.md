@@ -1,22 +1,17 @@
 # Project Dynasty (nazwa tymczasowa)
 
 ### Główny zarys fabuły
-Gra typu resource management inspirowana 60 Seconds i Crusader Kings 3. Jako świeżo wybrana głowa państwa masz wolność wyboru, jak poprowadzisz swój kraj<br>
-Zawiera elementy strategii i roguelików<br>
+Gra typu resource management inspirowana 60 Seconds
 
 ### Planowane ficzery
-Kamera z góry<br>
-Kilka map<br>
-Każdy run ma wpływ na następne<br>
-Wybory kształtują przebieg rozgrywki<br>
-Losowe zdarzenia mogące zmienić bieg fabuły<br>
-Customowe achievementy<br>
-Questy poboczne mogące odblokowywać nowe wątki fabularne<br>
-Dowolność wyboru w prowadzeniu swojego państwa - od zmiany nazwy po zmianę ustroju<br>
-Wybory moralne zmuszające do dostosowania swojej taktyki<br>
-Wskaźniki przyjaźni z postaciami i frakcjami<br>
-Duża ilość ścieżek rozgrywki - dyktator, pacyfista, prezydent i wiele innych<br>
+Wybory moralne<br>
+Zdobywanie ekwipunku<br>
+Relacje z różnymi frakcjami<br>
+Działająca zakładka ustawień<br>
+Możliwość zmiany tła w trakcie gry<br>
+Funkcja zapisu gry<br>
+
 
 ### Użyte biblioteki
 Pygame<br>
-(dodac kolejne)
+(inne)
