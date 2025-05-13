@@ -10,6 +10,8 @@ Relacje z różnymi frakcjami<br>
 Działająca zakładka ustawień<br>
 Możliwość zmiany tła w trakcie gry<br>
 Funkcja zapisu gry<br>
+Resetowanie postępów gry<br>
+Questy główne i poboczne<br>
 
 ### Użyte biblioteki
 Pygame<br>
