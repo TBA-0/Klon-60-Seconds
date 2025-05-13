@@ -12,6 +12,7 @@ Możliwość zmiany tła w trakcie gry<br>
 Funkcja zapisu gry<br>
 Resetowanie postępów gry<br>
 Questy główne i poboczne<br>
+Różne zakończenia<br>
 
 ### Użyte biblioteki
 Pygame<br>
