@@ -1,19 +1,12 @@
-# (brak nazwy, bo Project Dynasty już nie pasuje do tematu projektu)
 
-### Główny zarys
-Gra typu resource management inspirowana 60 Seconds
-
-### Planowane ficzery
-Wybory moralne<br>
-Zdobywanie ekwipunku<br>
-Relacje z różnymi frakcjami<br>
-Działająca zakładka ustawień<br>
-Możliwość zmiany tła w trakcie gry<br>
-Funkcja zapisu gry<br>
-Resetowanie postępów gry<br>
-Questy główne i poboczne<br>
-Różne zakończenia<br>
-
-### Użyte biblioteki
-Pygame<br>
-(inne)
+# 60 Sekund - Gra w Pygame
+    
+Ta gra to klon 60 Seconds by Robot Gentleman.
+Uruchom grę używając: python standalone_game.py
+    
+Wymagania:
+- Python 3.6+
+- pygame
+- numpy
+    
+Zainstaluj wymagane pakiety: pip install pygame numpy
