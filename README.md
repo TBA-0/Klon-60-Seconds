@@ -1,6 +1,8 @@
 
 # 60 Sekund - Gra w Pygame
-    
+
+## Gra znajduje się w folderze "Klon 60 Seconds"
+
 Ta gra to klon 60 Seconds by Robot Gentleman.
 Uruchom grę używając: python standalone_game.py
     
