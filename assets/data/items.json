@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Water Bottle",
+        "type": "water",
+        "value": 2
+    },
+    {
+        "id": 2,
+        "name": "Canned Food",
+        "type": "food",
+        "value": 2
+    },
+    {
+        "id": 3,
+        "name": "First Aid Kit",
+        "type": "medical",
+        "value": 3
+    },
+    {
+        "id": 4,
+        "name": "Axe",
+        "type": "weapon",
+        "value": 2
+    },
+    {
+        "id": 5,
+        "name": "Radio",
+        "type": "tool",
+        "value": 1
+    },
+    {
+        "id": 6,
+        "name": "Map",
+        "type": "misc",
+        "value": 1
+    },
+    {
+        "id": 7,
+        "name": "Flashlight",
+        "type": "tool",
+        "value": 1
+    },
+    {
+        "id": 8,
+        "name": "Matches",
+        "type": "tool",
+        "value": 1
+    },
+    {
+        "id": 9,
+        "name": "Gas Mask",
+        "type": "misc",
+        "value": 2
+    },
+    {
+        "id": 10,
+        "name": "Rope",
+        "type": "tool",
+        "value": 1
+    },
+    {
+        "id": 11,
+        "name": "Blanket",
+        "type": "misc",
+        "value": 1
+    },
+    {
+        "id": 12,
+        "name": "Ammo",
+        "type": "weapon",
+        "value": 1
+    },
+    {
+        "id": 13,
+        "name": "Pills",
+        "type": "medical",
+        "value": 2
+    },
+    {
+        "id": 14,
+        "name": "Soup",
+        "type": "food",
+        "value": 1
+    },
+    {
+        "id": 15,
+        "name": "Soda",
+        "type": "water",
+        "value": 1
+    }
+]
