@@ -1,11 +1,11 @@
 # 📄 Dokumentacja Gry: 60 Sekund – Klon „60 Seconds”
 
-## 🎯 Cel gry
+## Cel gry
 Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 dni w schronie, zarządzając zasobami i podejmując decyzje, które wpływają na zdrowie i psychikę członków rodziny.
 
 ---
 
-## 🛠️ Technologie
+## Technologie
 - **Język**: Python 3.6+
 - **Biblioteki:**
   - `pygame` – silnik gry 2D
@@ -14,7 +14,7 @@ Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 
 
 ---
 
-## 🧱 Struktura projektu
+## Struktura projektu
 - `projekt.py` – główny plik gry (logika + silnik)
 - `README.txt` – instrukcja uruchomienia
 - `assets/` – tworzony automatycznie katalog z podfolderami:
@@ -25,7 +25,7 @@ Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 
 
 ---
 
-## 🔧 Użyteczne funkcje w kodzie
+## Użyteczne funkcje w kodzie
 
 | Funkcja                         | Opis                                                                 |
 |----------------------------------|----------------------------------------------------------------------|
@@ -43,7 +43,7 @@ Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 
 
 ---
 
-## 📋 Fazy gry
+## Fazy gry
 
 ### 1. Faza Zbierania (60 sekund)
 - Gracz porusza się po domu
@@ -58,14 +58,14 @@ Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 
 
 ---
 
-## ✅ Wskazówki
+## Wskazówki
 - Jedzenie i woda to absolutna podstawa
 - Medykamenty mogą uratować życie
 - Broń i narzędzia pomagają w sytuacjach kryzysowych
 
 ---
 
-## ▶️ Uruchomienie gry
+## Uruchomienie gry
 
 ```bash
 pip install pygame numpy
