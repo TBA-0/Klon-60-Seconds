@@ -1,4 +1,4 @@
-# 📄 Dokumentacja Gry: 60 Sekund – Klon „60 Seconds”
+# Dokumentacja Gry: 60 Sekund – Klon „60 Seconds”
 
 ## Cel gry
 Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 dni w schronie, zarządzając zasobami i podejmując decyzje, które wpływają na zdrowie i psychikę członków rodziny.
