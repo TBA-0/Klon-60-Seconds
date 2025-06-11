@@ -69,4 +69,4 @@ Gracz ma 60 sekund na zebranie zapasów w domu, a następnie musi przetrwać 30 
 
 ```bash
 pip install pygame numpy
-python standalone_game.py
+python projekt.py
